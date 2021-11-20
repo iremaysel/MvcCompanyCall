@@ -26,5 +26,10 @@ namespace MvcCompanyCall.Controllers
 
             return View();
         }
+
+        public ActionResult Test()
+        {
+            return View();
+        }
     }
 }
