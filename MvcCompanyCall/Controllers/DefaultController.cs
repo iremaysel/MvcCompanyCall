@@ -13,5 +13,9 @@ namespace MvcCompanyCall.Controllers
         {
             return View();
         }
+        public ActionResult ActiveCalls()
+        {
+            return View();
+        }
     }
 }
