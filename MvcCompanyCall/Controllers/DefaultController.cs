@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MvcCompanyCall.Controllers
 {
-    public class LayoutController : Controller
+    public class DefaultController : Controller
     {
         // GET: Default
         public ActionResult Index()
