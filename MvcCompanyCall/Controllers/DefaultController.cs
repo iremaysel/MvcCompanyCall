@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcCompanyCall.Models.Entity;
 
 namespace MvcCompanyCall.Controllers
 {
@@ -13,9 +14,12 @@ namespace MvcCompanyCall.Controllers
         {
             return View();
         }
+
+        DbJobTrackingEntities db = new DbJobTrackingEntities();
         public ActionResult ActiveCalls()
         {
-            return View();
+            var calls = db.TblCall.ToList();
+            return View(calls);
         }
     }
 }
