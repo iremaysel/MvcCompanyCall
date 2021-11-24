@@ -2,7 +2,7 @@
 @model List<TblCall>
 
 @{
-    ViewBag.Title = "ActiveCalls";
+    ViewBag.Title = "PassiveCalls";
     Layout = "~/Views/Shared/CompanyLayout.cshtml";
 }
 
@@ -11,7 +11,7 @@
         <th>ID</th>
         <th>Konu</th>
         <th>Tarih</th>
-        <th>Düzenle</th>
+    
         <th>Detaylar</th>
     </tr>
     @foreach (var item in Model)
@@ -20,10 +20,8 @@
             <td>@item.ID</td>
             <td>@item.CallSubject</td>
             <td>@item.CallDate</td>
-            <td><a hred="#" class="btn btn-success">Düzenle</a></td>
-            <td><a hred="#" class="btn btn-info">Detaylar</a></td>           
+  
+            <td><a hred="#" class="btn btn-info">Detaylar</a></td>
         </tr>
     }
 </table>
-<a href="#" class="btn btn-primary" >Yeni Çağru Ekle</a>
-

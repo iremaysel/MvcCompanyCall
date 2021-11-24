@@ -18,7 +18,12 @@ namespace MvcCompanyCall.Controllers
         DbJobTrackingEntities db = new DbJobTrackingEntities();
         public ActionResult ActiveCalls()
         {
-            var calls = db.TblCall.ToList();
+            var calls = db.TblCall.Where(x =>x.CallStatus == true && x.CallCompany == 4).ToList();
+            return View(calls);
+        }
+        public ActionResult PassiveCalls()
+        {
+            var calls = db.TblCall.Where(x => x.CallStatus == false && x.CallCompany == 4).ToList();
             return View(calls);
         }
     }
