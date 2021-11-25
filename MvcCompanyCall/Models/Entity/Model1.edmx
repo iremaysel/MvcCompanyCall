@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbJobTrackingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbJobTrackingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblAdmin">
           <Key>
             <PropertyRef Name="ID" />
@@ -24,11 +24,21 @@
           <Property Name="CallStatus" Type="bit" />
           <Property Name="CallDate" Type="date" />
         </EntityType>
+        <EntityType Name="TblCallDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DetailCall" Type="int" />
+          <Property Name="DetailStatement" Type="nvarchar" MaxLength="250" />
+          <Property Name="DetailDate" Type="date" />
+          <Property Name="DetailClock" Type="char" MaxLength="5" />
+        </EntityType>
         <EntityType Name="TblCompanies">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="30" />
           <Property Name="Authorized" Type="nvarchar" MaxLength="30" />
           <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
@@ -79,15 +89,15 @@
           <Property Name="Dates" Type="date" />
           <Property Name="Clock" Type="char" MaxLength="5" />
         </EntityType>
-        <Association Name="FK_TblCall_TblCompanies">
-          <End Role="TblCompanies" Type="Self.TblCompanies" Multiplicity="0..1" />
-          <End Role="TblCall" Type="Self.TblCall" Multiplicity="*" />
+        <Association Name="FK_TblCallDetail_TblCall">
+          <End Role="TblCall" Type="Self.TblCall" Multiplicity="0..1" />
+          <End Role="TblCallDetail" Type="Self.TblCallDetail" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="TblCompanies">
+            <Principal Role="TblCall">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="TblCall">
-              <PropertyRef Name="CallCompany" />
+            <Dependent Role="TblCallDetail">
+              <PropertyRef Name="DetailCall" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -118,14 +128,15 @@
         <EntityContainer Name="DbJobTrackingModelStoreContainer">
           <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCall" EntityType="Self.TblCall" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblCallDetail" EntityType="Self.TblCallDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblCompanies" EntityType="Self.TblCompanies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartments" EntityType="Self.TblDepartments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTask" EntityType="Self.TblTask" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTaskDetail" EntityType="Self.TblTaskDetail" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_TblCall_TblCompanies" Association="Self.FK_TblCall_TblCompanies">
-            <End Role="TblCompanies" EntitySet="TblCompanies" />
+          <AssociationSet Name="FK_TblCallDetail_TblCall" Association="Self.FK_TblCallDetail_TblCall">
             <End Role="TblCall" EntitySet="TblCall" />
+            <End Role="TblCallDetail" EntitySet="TblCallDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_TblEmployee_TblDepartments" Association="Self.FK_TblEmployee_TblDepartments">
             <End Role="TblDepartments" EntitySet="TblDepartments" />
@@ -136,8 +147,7 @@
             <End Role="TblTaskDetail" EntitySet="TblTaskDetail" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbJobTrackingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -160,6 +170,7 @@
           <Property Name="CallStatus" Type="Boolean" />
           <Property Name="CallDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="TblCompanies" Relationship="Self.FK_TblCall_TblCompanies" FromRole="TblCall" ToRole="TblCompanies" />
+          <NavigationProperty Name="TblCallDetail" Relationship="DbJobTrackingModel.FK_TblCallDetail_TblCall" FromRole="TblCall" ToRole="TblCallDetail" />
         </EntityType>
         <EntityType Name="TblCompanies">
           <Key>
@@ -277,7 +288,35 @@
             <End Role="TblTask" EntitySet="TblTask" />
             <End Role="TblTaskDetail" EntitySet="TblTaskDetail" />
           </AssociationSet>
+          <EntitySet Name="TblCallDetail" EntityType="DbJobTrackingModel.TblCallDetail" />
+          <AssociationSet Name="FK_TblCallDetail_TblCall" Association="DbJobTrackingModel.FK_TblCallDetail_TblCall">
+            <End Role="TblCall" EntitySet="TblCall" />
+            <End Role="TblCallDetail" EntitySet="TblCallDetail" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="TblCallDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DetailCall" Type="Int32" />
+          <Property Name="DetailStatement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DetailDate" Type="DateTime" Precision="0" />
+          <Property Name="DetailClock" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TblCall" Relationship="DbJobTrackingModel.FK_TblCallDetail_TblCall" FromRole="TblCallDetail" ToRole="TblCall" />
+        </EntityType>
+        <Association Name="FK_TblCallDetail_TblCall">
+          <End Type="DbJobTrackingModel.TblCall" Role="TblCall" Multiplicity="0..1" />
+          <End Type="DbJobTrackingModel.TblCallDetail" Role="TblCallDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCall">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TblCallDetail">
+              <PropertyRef Name="DetailCall" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -362,6 +401,17 @@
                 <ScalarProperty Name="Statement" ColumnName="Statement" />
                 <ScalarProperty Name="Dates" ColumnName="Dates" />
                 <ScalarProperty Name="Clock" ColumnName="Clock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCallDetail">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblCallDetail">
+              <MappingFragment StoreEntitySet="TblCallDetail">
+                <ScalarProperty Name="DetailClock" ColumnName="DetailClock" />
+                <ScalarProperty Name="DetailDate" ColumnName="DetailDate" />
+                <ScalarProperty Name="DetailStatement" ColumnName="DetailStatement" />
+                <ScalarProperty Name="DetailCall" ColumnName="DetailCall" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

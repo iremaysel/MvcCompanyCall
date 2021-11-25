@@ -154,6 +154,9 @@
     <Compile Include="Models\Entity\TblCall.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\TblCallDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\TblCompanies.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -369,6 +372,8 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\ActiveCalls.cshtml" />
     <Content Include="Views\Default\PassiveCalls.cshtml" />
+    <Content Include="Views\Default\NewCall.cshtml" />
+    <Content Include="Views\Default\CallDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

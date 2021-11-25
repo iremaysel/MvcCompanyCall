@@ -1,0 +1,29 @@
+﻿
+@using MvcCompanyCall.Models.Entity;
+@model List<TblCallDetail>
+
+@{
+    ViewBag.Title = "CallDetail";
+    Layout = "~/Views/Shared/CompanyLayout.cshtml";
+}
+
+<h3>Çağrı Detayları</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.DetailStatement</td>
+            <td>@item.DetailClock</td>
+            <td>@item.DetailDate</td>
+        </tr>
+    }
+</table>
+
+

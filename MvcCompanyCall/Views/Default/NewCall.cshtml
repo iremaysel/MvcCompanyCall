@@ -1,0 +1,18 @@
+﻿@model MvcCompanyCall.Models.Entity.TblCall
+
+@{
+    ViewBag.Title = "NewCall";
+    Layout = "~/Views/Shared/CompanyLayout.cshtml";
+}
+
+<h2>Yeni Çağrı Ekleme Sayfası</h2>
+<br />
+<form method="post">
+    @Html.Label("Konu")
+    @Html.TextBoxFor(x => x.CallSubject, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.CallStatement,10,3,new {@class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Çağrı Oluştur</button>
+</form>

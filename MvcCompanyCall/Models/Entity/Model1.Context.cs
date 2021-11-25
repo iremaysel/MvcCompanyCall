@@ -32,5 +32,6 @@ namespace MvcCompanyCall.Models.Entity
         public virtual DbSet<TblEmployee> TblEmployee { get; set; }
         public virtual DbSet<TblTask> TblTask { get; set; }
         public virtual DbSet<TblTaskDetail> TblTaskDetail { get; set; }
+        public virtual DbSet<TblCallDetail> TblCallDetail { get; set; }
     }
 }
