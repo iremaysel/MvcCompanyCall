@@ -49,6 +49,12 @@ namespace MvcCompanyCall.Controllers
             var call = db.TblCallDetail.Where(x => x.DetailCall == id).ToList();
             return View(call);
         }
+
+        public ActionResult BringToCall(int id)
+        {
+            var call = db.TblCall.Find(id);
+            return View("BringToCall", call);
+        }
     }
 
 }

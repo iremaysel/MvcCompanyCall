@@ -1,0 +1,21 @@
+﻿@model MvcCompanyCall.Models.Entity.TblCall
+
+@{
+    ViewBag.Title = "BringToCall";
+    Layout = "~/Views/Shared/CompanyLayout.cshtml";
+}
+
+<h2>Çağrı Düzenleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("CallEdit", "Default", FormMethod.Post))
+{
+    @Html.Label("Konu")
+    @Html.TextBoxFor(x => x.CallSubject, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.CallStatement, 10, 3, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Değişiklikleri Kaydet</button>
+}
+
+

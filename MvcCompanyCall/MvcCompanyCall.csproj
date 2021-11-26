@@ -374,6 +374,7 @@
     <Content Include="Views\Default\PassiveCalls.cshtml" />
     <Content Include="Views\Default\NewCall.cshtml" />
     <Content Include="Views\Default\CallDetail.cshtml" />
+    <Content Include="Views\Default\BringToCall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
