@@ -55,6 +55,15 @@ namespace MvcCompanyCall.Controllers
             var call = db.TblCall.Find(id);
             return View("BringToCall", call);
         }
+
+        public ActionResult CallUpdate(TblCall p)
+        {
+            var calls = db.TblCall.Find(p.ID);
+            calls.CallSubject = p.CallSubject;
+            calls.CallStatement = p.CallStatement;
+            db.SaveChanges();
+            return RedirectToAction("ActiveCalls");
+        }
     }
 
 }

@@ -7,8 +7,10 @@
 
 <h2>Çağrı Düzenleme Sayfası</h2>
 <br />
-@using (Html.BeginForm("CallEdit", "Default", FormMethod.Post))
+@using (Html.BeginForm("CallUpdate", "Default", FormMethod.Post))
 {
+    @Html.HiddenFor(x => x.ID)
+    <br>
     @Html.Label("Konu")
     @Html.TextBoxFor(x => x.CallSubject, new { @class = "form-control" })
     <br />
