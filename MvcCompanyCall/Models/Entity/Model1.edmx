@@ -43,6 +43,7 @@
           <Property Name="Authorized" Type="nvarchar" MaxLength="30" />
           <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
           <Property Name="Sector" Type="nvarchar" MaxLength="30" />
           <Property Name="Province" Type="nvarchar" MaxLength="20" />
           <Property Name="District" Type="nvarchar" MaxLength="30" />
@@ -186,6 +187,7 @@
           <Property Name="District" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TblCall" Relationship="Self.FK_TblCall_TblCompanies" FromRole="TblCompanies" ToRole="TblCall" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TblDepartments">
           <Key>
@@ -347,6 +349,7 @@
           <EntitySetMapping Name="TblCompanies">
             <EntityTypeMapping TypeName="DbJobTrackingModel.TblCompanies">
               <MappingFragment StoreEntitySet="TblCompanies">
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Authorized" ColumnName="Authorized" />
