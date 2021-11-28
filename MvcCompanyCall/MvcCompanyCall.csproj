@@ -497,6 +497,7 @@
     <Content Include="Views\Default\CallDetail.cshtml" />
     <Content Include="Views\Default\BringToCall.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Default\ProfileEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

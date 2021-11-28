@@ -77,6 +77,15 @@ namespace MvcCompanyCall.Controllers
             db.SaveChanges();
             return RedirectToAction("ActiveCalls");
         }
+
+        [HttpGet]
+        public ActionResult ProfileEdit()
+        {
+            var email = (string)Session["Email"];
+            var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
+            var profile = db.TblCompanies.Where(x => x.ID == id).FirstOrDefault();
+            return View(profile);
+        }
     }
 
 }
