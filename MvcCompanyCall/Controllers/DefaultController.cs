@@ -11,41 +11,49 @@ namespace MvcCompanyCall.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
-        
+
         public ActionResult Index()
         {
             return View();
         }
 
         DbJobTrackingEntities db = new DbJobTrackingEntities();
-        
+
         public ActionResult ActiveCalls()
         {
-            var calls = db.TblCall.Where(x =>x.CallStatus == true && x.CallCompany == 4).ToList();
+            var email = (string)Session["Email"];
+            var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
+            var calls = db.TblCall.Where(x => x.CallStatus == true && x.CallCompany == id).ToList();
             return View(calls);
         }
 
 
         public ActionResult PassiveCalls()
         {
-            var calls = db.TblCall.Where(x => x.CallStatus == false && x.CallCompany == 4).ToList();
+            var email = (string)Session["Email"];
+            var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
+            var calls = db.TblCall.Where(x => x.CallStatus == false && x.CallCompany == id).ToList();
             return View(calls);
         }
-        
+
         [HttpGet]
         public ActionResult NewCall()
         {
+
             return View();
         }
 
         [HttpPost]
         public ActionResult NewCall(TblCall p)
         {
+            var email = (string)Session["Email"];
+            var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
             p.CallStatus = true;
             p.CallDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            p.CallCompany = 4;
+            p.CallCompany = id;
             db.TblCall.Add(p);
             db.SaveChanges();
+
             return RedirectToAction("ActiveCalls");
         }
 

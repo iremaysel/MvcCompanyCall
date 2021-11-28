@@ -6,6 +6,7 @@
     Layout = "~/Views/Shared/CompanyLayout.cshtml";
 }
 
+<h3>Pasif Çağrılar</h3>
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -21,8 +22,8 @@
             <td>@item.CallSubject</td>
             <td>@item.CallDate</td>
   
-            <td><a hred="#" class="btn btn-info">Detaylar</a></td>
+            <td><a href="/Default/CallDetail/@item.ID" class="btn btn-info">Detaylar</a></td>
         </tr>
     }
 </table>
-<a href="/Default/NewCall/" class="btn btn-primary">Yeni Çağru Ekle</a>
+<a href="/Default/NewCall/" class="btn btn-primary">Yeni Çağrı Ekle</a>
