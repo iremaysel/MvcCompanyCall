@@ -134,59 +134,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa fa-comment-o"></i><span class="badge blue">4</span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <div class="notification_header">
-                                                <h3>You have 4 new messages</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="grid">
-                                                <div class="user_img"><img src="~/web2/assets/images/avatar1.jpg" alt=""></div>
-                                                <div class="notification_desc">
-                                                    <p>Johnson purchased template</p>
-                                                    <span>Just Now</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="odd">
-                                            <a href="#" class="grid">
-                                                <div class="user_img"><img src="~/web2/assets/images/avatar2.jpg" alt=""></div>
-                                                <div class="notification_desc">
-                                                    <p>New customer registered </p>
-                                                    <span>1 hour ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="grid">
-                                                <div class="user_img"><img src="~/web2/assets/images/avatar3.jpg" alt=""></div>
-                                                <div class="notification_desc">
-                                                    <p>Lorem ipsum dolor sit amet </p>
-                                                    <span>2 hours ago</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="grid">
-                                                <div class="user_img"><img src="~/web2/assets/images/avatar1.jpg" alt=""></div>
-                                                <div class="notification_desc">
-                                                    <p>Johnson purchased template</p>
-                                                    <span>Just Now</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div class="notification_bottom">
-                                                <a href="#all" class="bg-primary">See all messages</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
+                                @Html.Action("PartialMessageTable", "Default");
                             </ul>
                         </div>
                         <div class="profile_details">
@@ -235,7 +183,7 @@
                 </nav>
                 <div class="welcome-msg pt-3 pb-4">
                     <h1>Merhaba <span class="text-primary">Sayın @ViewBag.authorized</span>, Tekrar Hoş Geldiniz</h1>
-                    
+
                 </div>
 
                 <!-- statistics data -->
@@ -245,14 +193,14 @@
                             <div class="row">
                                 <div class="col-sm-6 pr-sm-2 statistics-grid">
                                     <div class="card card_border border-primary-top p-4">
-                                        <i class="lnr lnr-users"> </i>
+                                        <i class="lnr lnr-sort-alpha-asc"> </i>
                                         <h3 class="text-primary number">@ViewBag.sum</h3>
                                         <p class="stat-text">Toplam Çağrı</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 pl-sm-2 statistics-grid">
                                     <div class="card card_border border-primary-top p-4">
-                                        <i class="lnr lnr-eye"> </i>
+                                        <i class="lnr lnr-volume-high"> </i>
                                         <h3 class="text-secondary number">@ViewBag.active</h3>
                                         <p class="stat-text">Aktif Çağrı</p>
                                     </div>
@@ -263,14 +211,14 @@
                             <div class="row">
                                 <div class="col-sm-6 pr-sm-2 statistics-grid">
                                     <div class="card card_border border-primary-top p-4">
-                                        <i class="lnr lnr-cloud-download"> </i>
+                                        <i class="lnr lnr-volume"> </i>
                                         <h3 class="text-success number">@ViewBag.passive</h3>
                                         <p class="stat-text">Pasif Çağrı</p>
                                     </div>
                                 </div>
                                 <div class="col-sm-6 pl-sm-2 statistics-grid">
                                     <div class="card card_border border-primary-top p-4">
-                                        <i class="lnr lnr-cart"> </i>
+                                        <i class="lnr lnr-apartment"> </i>
                                         <h3 class="text-danger number">@ViewBag.sector</h3>
                                         <p class="stat-text">Sektör</p>
                                     </div>
@@ -664,7 +612,7 @@
         <span class="fa fa-angle-up"></span>
     </button>
     <script>
-    // When the user scrolls down 20px from the top of the document, show the button
+        // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction()
         };
@@ -703,7 +651,7 @@
 
     <!-- close script -->
     <script>
-    var closebtns = document.getElementsByClassName("close-grid");
+        var closebtns = document.getElementsByClassName("close-grid");
         var i;
 
         for (i = 0; i < closebtns.length; i++) {
@@ -714,7 +662,7 @@
     <!-- //close script -->
     <!-- disable body scroll when navbar is in active -->
     <script>
-    $(function () {
+        $(function () {
             $('.sidebar-menu-collapsed').click(function () {
                 $('body').toggleClass('noscroll');
             })
@@ -723,7 +671,7 @@
     <!-- loading-gif Js -->
     <script src="assets/js/modernizr.js"></script>
     <script>
-    $(window).load(function () {
+        $(window).load(function () {
             // Animate loader off screen
             $(".se-pre-con").fadeOut("slow");;
         });</script>

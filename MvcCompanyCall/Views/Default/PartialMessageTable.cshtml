@@ -1,0 +1,33 @@
+﻿@using MvcCompanyCall.Models.Entity
+@model List<TblMessage>
+
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-comment-o"></i><span class="badge blue">@ViewBag.message</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <div class="notification_header">
+                <h3>Toplam @ViewBag.message yeni mesajınız var </h3>
+            </div>
+        </li>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="#" class="grid">
+                    <div class="user_img"><img src="~/web2/starter/assets/images/avatar1.jpg" alt=""></div>
+                    <div class="notification_desc">
+                        <p>@item.Sender</p>
+                        <span>@item.Subject</span>
+                    </div>
+                </a>
+            </li>
+
+        }
+        <li>
+            <div class="notification_bottom">
+                <a href="/Default/ComingMessage/" class="bg-primary">Bütün mesajları gör</a>
+            </div>
+        </li>
+    </ul>
+</li>

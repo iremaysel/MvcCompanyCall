@@ -107,6 +107,15 @@ namespace MvcCompanyCall.Controllers
             return View();
         }
 
+        public PartialViewResult PartialMessageTable()
+        {
+            var email = (string)Session["Email"];
+            var messageCount = db.TblMessage.Where(x => x.Receiver == email && x.Status == true).Count();
+            var message = db.TblMessage.Where(x => x.Receiver == email).ToList();
+            ViewBag.message = messageCount;
+            return PartialView(message);
+        }
+
     }
 
 }
