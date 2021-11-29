@@ -69,6 +69,18 @@
           <Property Name="Department" Type="int" />
           <Property Name="Status" Type="bit" />
         </EntityType>
+        <EntityType Name="TblMessage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Receiver" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="MessageDate" Type="date" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
         <EntityType Name="TblTask">
           <Key>
             <PropertyRef Name="ID" />
@@ -133,6 +145,7 @@
           <EntitySet Name="TblCompanies" EntityType="Self.TblCompanies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblDepartments" EntityType="Self.TblDepartments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmployee" EntityType="Self.TblEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblMessage" EntityType="Self.TblMessage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTask" EntityType="Self.TblTask" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblTaskDetail" EntityType="Self.TblTaskDetail" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_TblCallDetail_TblCall" Association="Self.FK_TblCallDetail_TblCall">
@@ -295,6 +308,7 @@
             <End Role="TblCall" EntitySet="TblCall" />
             <End Role="TblCallDetail" EntitySet="TblCallDetail" />
           </AssociationSet>
+          <EntitySet Name="TblMessage" EntityType="DbJobTrackingModel.TblMessage" />
         </EntityContainer>
         <EntityType Name="TblCallDetail">
           <Key>
@@ -319,6 +333,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TblMessage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Receiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageDate" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -414,6 +440,19 @@
                 <ScalarProperty Name="DetailDate" ColumnName="DetailDate" />
                 <ScalarProperty Name="DetailStatement" ColumnName="DetailStatement" />
                 <ScalarProperty Name="DetailCall" ColumnName="DetailCall" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblMessage">
+            <EntityTypeMapping TypeName="DbJobTrackingModel.TblMessage">
+              <MappingFragment StoreEntitySet="TblMessage">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="Sender" ColumnName="Sender" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
