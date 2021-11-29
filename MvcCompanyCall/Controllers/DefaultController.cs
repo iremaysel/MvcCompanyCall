@@ -86,6 +86,13 @@ namespace MvcCompanyCall.Controllers
             var profile = db.TblCompanies.Where(x => x.ID == id).FirstOrDefault();
             return View(profile);
         }
+
+        public ActionResult HomePage()
+        {
+            
+            return View();
+        }
+
     }
 
 }
