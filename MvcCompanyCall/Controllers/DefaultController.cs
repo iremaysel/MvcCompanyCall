@@ -24,6 +24,8 @@ namespace MvcCompanyCall.Controllers
             var email = (string)Session["Email"];
             var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
             var calls = db.TblCall.Where(x => x.CallStatus == true && x.CallCompany == id).ToList();
+            var activeCalls = db.TblCall.Where(x => x.CallCompany == id && x.CallStatus == true).Count();
+            ViewBag.active = activeCalls;
             return View(calls);
         }
 
@@ -84,12 +86,24 @@ namespace MvcCompanyCall.Controllers
             var email = (string)Session["Email"];
             var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
             var profile = db.TblCompanies.Where(x => x.ID == id).FirstOrDefault();
+      
             return View(profile);
         }
 
         public ActionResult HomePage()
         {
-            
+            var email = (string)Session["Email"];
+            var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
+            var sumCall = db.TblCall.Where(x => x.CallCompany == id).Count();
+            var activeCalls = db.TblCall.Where(x => x.CallCompany == id && x.CallStatus == true).Count();
+            var passiveCalls = db.TblCall.Where(x => x.CallCompany == id && x.CallStatus == false).Count();
+            var authorizedCompany = db.TblCompanies.Where(x => x.ID == id).Select(y => y.Authorized).FirstOrDefault();
+            var sectorCompany = db.TblCompanies.Where(x => x.ID == id).Select(y => y.Sector).FirstOrDefault();
+            ViewBag.sum = sumCall;
+            ViewBag.active = activeCalls;
+            ViewBag.passive = passiveCalls;
+            ViewBag.authorized = authorizedCompany;
+            ViewBag.sector = sectorCompany;
             return View();
         }
 

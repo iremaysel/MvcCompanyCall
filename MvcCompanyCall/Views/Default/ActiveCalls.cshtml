@@ -7,6 +7,7 @@
 }
 
 <h3>Aktif Çağrılar</h3>
+
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -15,8 +16,16 @@
         <th>Düzenle</th>
         <th>Detaylar</th>
     </tr>
+    @if (@ViewBag.active == 0)
+    {
+        <br />
+        <p>Aktif çağrınız bulunmuyor!</p>
+    }
+
+
     @foreach (var item in Model)
     {
+
         <tr>
             <td>@item.ID</td>
             <td>@item.CallSubject</td>
@@ -25,6 +34,7 @@
             <td><a href="/Default/CallDetail/@item.ID" class="btn btn-info">Detaylar</a></td>
         </tr>
     }
+
 </table>
 <a href="/Default/NewCall/" class="btn btn-primary">Yeni Çağrı Ekle</a>
 
