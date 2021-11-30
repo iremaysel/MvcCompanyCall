@@ -1,0 +1,32 @@
+﻿@using MvcCompanyCall.Models.Entity
+@model List<TblCall>
+
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-bell-o"></i><span class="badge blue">@ViewBag.active</span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <div class="notification_header">
+                <h3>Aktif Çağrı Bildirimleriniz</h3>
+            </div>
+        </li>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="/Default/CallDetail/@item.ID" class="grid">
+                    <div class="user_img"><img src="~/web2/starter/assets/images/avatar1.jpg" alt=""></div>
+                    <div class="notification_desc">
+                        <p>@item.CallSubject</p>
+                        <span>@item.CallDate</span>
+                    </div>
+                </a>
+            </li>
+        }
+        <li>
+            <div class="notification_bottom">
+                <a href="/Default/ActiveCalls/" class="bg-primary">Tüm Çağrıları Gör</a>
+            </div>
+        </li>
+    </ul>
+</li>

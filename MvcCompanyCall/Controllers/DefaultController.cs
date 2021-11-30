@@ -111,9 +111,19 @@ namespace MvcCompanyCall.Controllers
         {
             var email = (string)Session["Email"];
             var messageCount = db.TblMessage.Where(x => x.Receiver == email && x.Status == true).Count();
-            var message = db.TblMessage.Where(x => x.Receiver == email).ToList();
+            var message = db.TblMessage.Where(x => x.Receiver == email && x.Status == true).ToList();
             ViewBag.message = messageCount;
             return PartialView(message);
+        }
+
+        public PartialViewResult PartialNotificationTable()
+        {
+            var email = (string)Session["Email"];
+            var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
+            var activeCalls = db.TblCall.Where(x => x.CallCompany == id && x.CallStatus == true).Count();
+            var calls = db.TblCall.Where(x => x.CallCompany == id && x.CallStatus == true).ToList();
+            ViewBag.active = activeCalls;
+            return PartialView(calls);
         }
 
     }
