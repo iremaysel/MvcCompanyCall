@@ -18,6 +18,8 @@ namespace MvcCompanyCall.Models.Entity
         public TblCompanies()
         {
             this.TblCall = new HashSet<TblCall>();
+            this.TblMessage = new HashSet<TblMessage>();
+            this.TblMessage1 = new HashSet<TblMessage>();
         }
     
         public int ID { get; set; }
@@ -30,8 +32,13 @@ namespace MvcCompanyCall.Models.Entity
         public string District { get; set; }
         public string Address { get; set; }
         public string Password { get; set; }
+        public string Image { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblCall> TblCall { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblMessage> TblMessage { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblMessage> TblMessage1 { get; set; }
     }
 }

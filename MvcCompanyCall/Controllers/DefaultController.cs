@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using MvcCompanyCall.Models.Entity;
 
 namespace MvcCompanyCall.Controllers
@@ -110,8 +111,9 @@ namespace MvcCompanyCall.Controllers
         public PartialViewResult PartialMessageTable()
         {
             var email = (string)Session["Email"];
-            var messageCount = db.TblMessage.Where(x => x.Receiver == email && x.Status == true).Count();
-            var message = db.TblMessage.Where(x => x.Receiver == email && x.Status == true).ToList();
+            var id = db.TblCompanies.Where(x => x.Email == email).Select(y => y.ID).FirstOrDefault();
+            var messageCount = db.TblMessage.Where(x => x.Receiver == id && x.Status == true).Count();
+            var message = db.TblMessage.Where(x => x.Receiver == id && x.Status == true).ToList();
             ViewBag.message = messageCount;
             return PartialView(message);
         }
@@ -126,6 +128,12 @@ namespace MvcCompanyCall.Controllers
             return PartialView(calls);
         }
 
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index","Login");
+        }
     }
 
 }

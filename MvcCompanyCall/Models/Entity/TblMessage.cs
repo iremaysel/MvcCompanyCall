@@ -15,11 +15,14 @@ namespace MvcCompanyCall.Models.Entity
     public partial class TblMessage
     {
         public int ID { get; set; }
-        public string Sender { get; set; }
-        public string Receiver { get; set; }
+        public Nullable<int> Sender { get; set; }
+        public Nullable<int> Receiver { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
         public Nullable<System.DateTime> MessageDate { get; set; }
         public Nullable<bool> Status { get; set; }
+    
+        public virtual TblCompanies TblCompanies { get; set; }
+        public virtual TblCompanies TblCompanies1 { get; set; }
     }
 }
