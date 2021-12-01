@@ -134,6 +134,14 @@ namespace MvcCompanyCall.Controllers
             Session.Abandon();
             return RedirectToAction("Index","Login");
         }
+
+        public PartialViewResult PartialAccordion()
+        {
+            
+            return PartialView();
+        }
+
+
     }
 
 }

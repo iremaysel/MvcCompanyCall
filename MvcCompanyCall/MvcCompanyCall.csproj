@@ -558,6 +558,7 @@
     <Content Include="Views\Default\HomePage.cshtml" />
     <Content Include="Views\Default\PartialMessageTable.cshtml" />
     <Content Include="Views\Default\PartialNotificationTable.cshtml" />
+    <Content Include="Views\Default\PartialAccordion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
