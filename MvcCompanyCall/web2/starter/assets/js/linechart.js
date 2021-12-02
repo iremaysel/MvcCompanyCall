@@ -3,13 +3,13 @@ new Chart(document.getElementById("linechart"), {
 	data: {
 		labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 		datasets: [{
-			label: 'My First dataset',
+			label: 'Pasif Çaðrýlar',
 			backgroundColor: window.chartColors.navy,
 			borderColor: window.chartColors.navy,
 			data: [30,10,70,15,60,20,70,80],
 			fill: false,
 		}, {
-			label: 'My Second dataset',
+			label: 'Aktif Çaðrýlar',
 			fill: false,
 			backgroundColor: window.chartColors.purple,
 			borderColor: window.chartColors.purple,

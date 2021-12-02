@@ -75,7 +75,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
                                        aria-expanded="false">
                                         <div class="profile_img">
-                                            <img src="~/web2/starter/assets/images/profileimg.jpg" class="rounded-circle" alt="" />
+                                            <img src="@ViewBag.image" class="rounded-circle" alt="" />
                                             <div class="user-active">
                                                 <span></span>
                                             </div>
@@ -83,13 +83,13 @@
                                     </a>
                                     <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
                                         <li class="user-info">
-                                            <h5 class="user-name">Firma Adı</h5>
+                                            <h5 class="user-name">@ViewBag.company</h5>
                                             <span class="status ml-2">Müsait</span>
                                         </li>
-                                        <li> <a href="/Default/ActiveCalls/"><i class="lnr lnr-user"></i>Aktif Çağrılar</a> </li>
-                                        <li> <a href="/Default/PassiveCalls/"><i class="lnr lnr-users"></i>Pasif Çağrılar</a> </li>
+                                        <li> <a href="/Default/ActiveCalls/"><i class="lnr lnr-volume-high"></i>Aktif Çağrılar</a> </li>
+                                        <li> <a href="/Default/PassiveCalls/"><i class="lnr lnr-volume"></i>Pasif Çağrılar</a> </li>
                                         <li> <a href="/Default/ProfileEdit/"><i class="lnr lnr-cog"></i>Profilimi Düzenle</a> </li>
-                                        <li> <a href="/Default/NewCall/"><i class="lnr lnr-heart"></i>Yeni Çağrı</a> </li>
+                                        <li> <a href="/Default/NewCall/"><i class="lnr lnr-phone-handset"></i>Yeni Çağrı</a> </li>
                                         <li class="logout"> <a href="/Default/LogOut/"><i class="fa fa-power-off"></i> Oturumu Kapat</a> </li>
                                     </ul>
                                 </li>

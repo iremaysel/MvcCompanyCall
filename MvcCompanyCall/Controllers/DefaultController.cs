@@ -100,11 +100,15 @@ namespace MvcCompanyCall.Controllers
             var passiveCalls = db.TblCall.Where(x => x.CallCompany == id && x.CallStatus == false).Count();
             var authorizedCompany = db.TblCompanies.Where(x => x.ID == id).Select(y => y.Authorized).FirstOrDefault();
             var sectorCompany = db.TblCompanies.Where(x => x.ID == id).Select(y => y.Sector).FirstOrDefault();
+            var companyName = db.TblCompanies.Where(x => x.ID == id).Select(y => y.Name).FirstOrDefault();
+            var imageCompany = db.TblCompanies.Where(x => x.ID == id).Select(y => y.Image).FirstOrDefault();
             ViewBag.sum = sumCall;
             ViewBag.active = activeCalls;
             ViewBag.passive = passiveCalls;
             ViewBag.authorized = authorizedCompany;
             ViewBag.sector = sectorCompany;
+            ViewBag.company = companyName;
+            ViewBag.image = imageCompany;
             return View();
         }
 
