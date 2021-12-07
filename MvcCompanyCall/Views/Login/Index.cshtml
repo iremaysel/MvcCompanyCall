@@ -6,85 +6,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Giriş Yap</title>
+    <link rel="shortcut icon" href="~/loginPage/login.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+    <link rel="stylesheet" href="~/loginPage/style.css">
 
-    <link rel="stylesheet" href="~/login-form/fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="~/login-form/css/owl.carousel.min.css">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/login-form/css/bootstrap.min.css">
-
-    <!-- Style -->
-    <link rel="stylesheet" href="~/login-form/css/style.css">
-
-    <title>İş Takip Giriş Paneli</title>
 </head>
 <body>
-    <div class="content">
+    <!-- partial:index.partial.html -->
+    <body id="particles-js">
+    </body>
+    <div class="animated bounceInDown">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 order-md-2">
-                    <img src="~/login-form/images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
-                </div>
-                <div class="col-md-6 contents">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                            <div class="mb-4">
-                                <h3>İş Takip Cari Paneli</h3>
-                                <p class="mb-4">Çağrı oluşturumak için ve çağrılarınızı takip etmek için lütfen oturum açın.</p>
-                            </div>
-                            <form method="post">
-                                <div class="form-group first">
-                                    <label for="username">Kullanıcı Adı</label>
-                                    <input type="text" class="form-control" name="Email" id="username">
-
-                                </div>
-                                <div class="form-group last mb-4">
-                                    <label for="password">Şifre</label>
-                                    <input type="password" class="form-control" name="Password" id="password">
-
-                                </div>
-
-                                <div class="d-flex mb-5 align-items-center">
-                                    <label class="control control--checkbox mb-0">
-                                        <span class="caption">Beni hatırla</span>
-                                        <input type="checkbox" checked="checked" />
-                                        <div class="control__indicator"></div>
-                                    </label>
-                                    <span class="ml-auto"><a href="#" class="forgot-pass">Şifremi unuttum</a></span>
-                                </div>
-
-                                <input type="submit" value="Giriş Yap" class="btn text-white btn-block btn-primary">
-
-                                <span class="d-block text-left my-4 text-muted"> veya şununla giriş yap</span>
-
-                                <div class="social-login">
-                                    <a href="#" class="facebook">
-                                        <span class="icon-facebook mr-3"></span>
-                                    </a>
-                                    <a href="#" class="twitter">
-                                        <span class="icon-twitter mr-3"></span>
-                                    </a>
-                                    <a href="#" class="google">
-                                        <span class="icon-google mr-3"></span>
-                                    </a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
+            <span class="error animated tada" id="msg"></span>
+            <form name="form1" class="box" onsubmit="return checkStuff()" method="post">
+                <h4>İş Takip ve Yönetim Paneli</h4>
+                <h5>Çağrı oluşturumak için ve çağrılarınızı takip etmek için lütfen oturum açın.</h5>
+                <input type="text" name="Email" placeholder="Kullanıcı Adı" autocomplete="off">
+                <i class="typcn typcn-eye" id="eye"></i>
+                <input type="password" name="Password" placeholder="Şifre" id="pwd" autocomplete="off">
+                <br>
+                <label>
+                    <input type="checkbox">
+                    <span></span>
+                    <small class="rmb">Beni hatırla</small>
+                </label>
+                <a href="#" class="forgetpass">Şifremi unuttum</a>
+                <input type="submit" value="Giriş Yap" class="btn1">
+            </form>
         </div>
-    </div>
-    <script src="~/login-form/js/jquery-3.3.1.min.js"></script>
-    <script src="~/login-form/js/popper.min.js"></script>
-    <script src="~/login-form/js/bootstrap.min.js"></script>
-    <script src="~/login-form/js/main.js"></script>
+        <!-- partial -->
+        <script src='https://cldup.com/S6Ptkwu_qA.js'></script>
+        <script src="~/loginPage/script.js"></script>
+
 </body>
 </html>
