@@ -10,61 +10,125 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Firma Çağrıları</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link href="~/web/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
-    <link href="~/web/css/font-awesome.css" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css' />
-    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="~/web/css/icon-font.min.css" type='text/css' />
-    <script src="~/web/js/jquery-1.10.2.min.js"></script>
-</head>
-<body>
-    <div class="page-container">
-        <div class="left-content">
-            <div class="inner-content">
-                <div class="header-section">
-                    <div class="top_bg">
-                        <div class="header_top">
-                            <div class="top_right">
-                                <ul>
-                                    <li><a href="contact.html">Yardım</a></li>|
-                                    <li><a href="contact.html">İletişim</a></li>                
-                                </ul>
+@*<!DOCTYPE HTML>
+    <html>
+    <head>
+        <title>Firma Çağrıları</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <link href="~/web/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+        <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
+        <link href="~/web/css/font-awesome.css" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css' />
+        <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="~/web/css/icon-font.min.css" type='text/css' />
+        <script src="~/web/js/jquery-1.10.2.min.js"></script>
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="left-content">
+                <div class="inner-content">
+                    <div class="header-section">
+                        <div class="top_bg">
+                            <div class="header_top">
+                                <div class="top_right">
+                                    <ul>
+                                        <li><a href="contact.html">Yardım</a></li>|
+                                        <li><a href="contact.html">İletişim</a></li>
+                                    </ul>
+                                </div>
+                                <div class="top_left">
+                                    <h2><span></span> Bize Ulaşın : +90 500 300 20 10</h2>
+                                </div>
+                                <div class="clearfix"> </div>
                             </div>
-                            <div class="top_left">
-                                <h2><span></span> Bize Ulaşın : +90 500 300 20 10</h2>
-                            </div>
-                            <div class="clearfix"> </div>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="content">
-                    <div class="women_main">
-                        @RenderBody()
+                    <div class="content">
+                        <div class="women_main">
+                            @RenderBody()
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="sidebar-menu">
+                <header class="logo1">
+                    <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+                </header>
+                <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
+                <div class="menu">
+                    <ul id="menu">
+                        <li><a href="/Default/HomePage/"><i class="lnr lnr-home"></i> <span>Ana Sayfa</span></a></li>
+
+                        <li id="menu-academico"><a href="/Default/ActiveCalls/"><i class="lnr lnr-volume-high"></i> <span>Aktif Çağrılar</span></a></li>
+                        <li><a href="/Default/PassiveCalls/"><i class="lnr lnr-volume"></i> <span>Pasif Çağrılar</span></a></li>
+                        <li><a href="/Default/NewCall/"><i class="lnr lnr-phone-handset"></i> <span>Yeni Çağrı</span></a></li>
+                        <li><a href="/Default/NewCall/"><i class="lnr lnr-plus-circle"></i> <span>Yeni Mesaj</span></a></li>
+                        <li><a href="/Default/NewCall/"><i class="lnr lnr-bubble"></i> <span>Gelen Mesajlar</span></a></li>
+                        <li><a href="/Default/NewCall/"><i class="lnr lnr-checkmark-circle"></i> <span>Gönderilen Mesajlar</span></a></li>
+                        <li id="menu-academico"><a href="/Default/ProfileEdit/"><i class="lnr lnr-user"></i> <span>Profili Düzenle</span></a></li>
+                        <li id="menu-academico"><a href="/Default/LogOut/"><i class="lnr lnr-exit"></i> <span>Çıkış Yap</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="sidebar-menu">
-            <header class="logo1">
-                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
-            </header>
-            <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
-            <div class="menu">
-                <ul id="menu">
+        <script>
+            var toggle = true;
+
+            $(".sidebar-icon").click(function () {
+                if (toggle) {
+                    $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                    $("#menu span").css({ "position": "absolute" });
+                }
+                else {
+                    $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                    setTimeout(function () {
+                        $("#menu span").css({ "position": "relative" });
+                    }, 400);
+                }
+                toggle = !toggle;
+            });
+        </script>
+        <script src="~/web/js/jquery.nicescroll.js"></script>
+        <script src="~/web/js/scripts.js"></script>
+        <script src="~/web/js/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src="~/web/js/jquery.flot.js"></script>
+        <script src="~/web/js/menu_jquery.js"></script>
+    </body>
+    </html>*@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>İş Takip Projesi Dashboard </title>
+
+    <link rel="stylesheet" href="~/web2/starter/assets/css/style-starter.css">
+
+    <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
+</head>
+<body class="sidebar-menu-collapsed">
+    <div class="se-pre-con"></div>
+    <section>
+        
+        <div class="sidebar-menu sticky-sidebar-menu">
+            <div class="logo">
+                <h1><a href="~/web2/starter/index.html">Collective</a></h1>
+            </div>
+            <div class="logo-icon text-center">
+                <a href="~/web2/starter/index.html" title="logo"><img src="~/web2/starter/assets/images/logo.png" alt="logo-icon"> </a>
+            </div>
+            <div class="sidebar-menu-inner">
+                <ul class="nav nav-pills nav-stacked custom-nav menu-list active">
                     <li><a href="/Default/HomePage/"><i class="lnr lnr-home"></i> <span>Ana Sayfa</span></a></li>
-                    
-                    <li id="menu-academico"><a href="/Default/ActiveCalls/"><i class="lnr lnr-volume-high"></i> <span>Aktif Çağrılar</span></a></li>
+                    <li><a href="/Default/ActiveCalls/"><i class="lnr lnr-volume-high"></i> <span>Aktif Çağrılar</span></a></li>
                     <li><a href="/Default/PassiveCalls/"><i class="lnr lnr-volume"></i> <span>Pasif Çağrılar</span></a></li>
                     <li><a href="/Default/NewCall/"><i class="lnr lnr-phone-handset"></i> <span>Yeni Çağrı</span></a></li>
                     <li><a href="/Default/NewCall/"><i class="lnr lnr-plus-circle"></i> <span>Yeni Mesaj</span></a></li>
@@ -72,32 +136,120 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="/Default/NewCall/"><i class="lnr lnr-checkmark-circle"></i> <span>Gönderilen Mesajlar</span></a></li>
                     <li id="menu-academico"><a href="/Default/ProfileEdit/"><i class="lnr lnr-user"></i> <span>Profili Düzenle</span></a></li>
                     <li id="menu-academico"><a href="/Default/LogOut/"><i class="lnr lnr-exit"></i> <span>Çıkış Yap</span></a></li>
+
                 </ul>
+                <a class="toggle-btn">
+                    <i class="fa fa-angle-double-left menu-collapsed__left"><span>İş Takip Sistemi</span></i>
+                    <i class="fa fa-angle-double-right menu-collapsed__right"></i>
+                </a>
             </div>
         </div>
-        <div class="clearfix"></div>
-    </div>
-    <script>
-        var toggle = true;
+        <div class="header sticky-header">
+            <div class="menu-right">
+                <div class="navbar user-panel-top">
+                    <div class="search-box">
+                        <form action="#search-results.html" method="get">
+                            <input class="search-input" placeholder="Buraya Yazın..." type="search" id="search">
+                            <button class="search-submit" value=""><span class="fa fa-search"></span></button>
+                        </form>
+                    </div>
+                    <div class="user-dropdown-details d-flex">
+                        <div class="profile_details_left">
+                            <ul class="nofitications-dropdown">
+                                @Html.Action("PartialNotificationTable", "Default");
 
-        $(".sidebar-icon").click(function () {
-            if (toggle) {
-                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-                $("#menu span").css({ "position": "absolute" });
+                                @Html.Action("PartialMessageTable", "Default");
+                            </ul>
+                        </div>
+                        <div class="profile_details">
+                            <ul>
+                                <li class="dropdown profile_details_drop">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
+                                       aria-expanded="false">
+                                        <div class="profile_img">
+                                            <img src="@ViewBag.image" class="rounded-circle" alt="" />
+                                            <div class="user-active">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
+                                        <li class="user-info">
+                                            <h5 class="user-name">@ViewBag.company</h5>
+                                            <span class="status ml-2">Müsait</span>
+                                        </li>
+                                        <li> <a href="/Default/ActiveCalls/"><i class="lnr lnr-volume-high"></i>Aktif Çağrılar</a> </li>
+                                        <li> <a href="/Default/PassiveCalls/"><i class="lnr lnr-volume"></i>Pasif Çağrılar</a> </li>
+                                        <li> <a href="/Default/ProfileEdit/"><i class="lnr lnr-cog"></i>Profilimi Düzenle</a> </li>
+                                        <li> <a href="/Default/NewCall/"><i class="lnr lnr-phone-handset"></i>Yeni Çağrı</a> </li>
+                                        <li class="logout"> <a href="/Default/LogOut/"><i class="fa fa-power-off"></i> Oturumu Kapat</a> </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="container-fluid content-top-gap content">
+                @RenderBody()               
+            </div>
+        </div>
+    </section>
+    <footer class="dashboard">
+        <p>
+            &copy 2020 Collective. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank"
+                                                                      class="text-primary">W3layouts.</a>
+        </p>
+    </footer>
+    <button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
+        <span class="fa fa-angle-up"></span>
+    </button>
+    <script>
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
             }
-            else {
-                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-                setTimeout(function () {
-                    $("#menu span").css({ "position": "relative" });
-                }, 400);
-            }
-            toggle = !toggle;
-        });
-    </script>
-    <script src="~/web/js/jquery.nicescroll.js"></script>
-    <script src="~/web/js/scripts.js"></script>
-    <script src="~/web/js/bootstrap.min.js"></script>
-    <script language="javascript" type="text/javascript" src="~/web/js/jquery.flot.js"></script>
-    <script src="~/web/js/menu_jquery.js"></script>
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }</script>
+    <script src="~/web2/starter/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/web2/starter/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="~/web2/starter/assets/js/Chart.min.js"></script>
+    <script src="~/web2/starter/assets/js/utils.js"></script>
+    <script src="~/web2/starter/assets/js/bar.js"></script>
+    <script src="~/web2/starter/assets/js/linechart.js"></script>
+    <script src="~/web2/starter/assets/js/jquery.nicescroll.js"></script>
+    <script src="~/web2/starter/assets/js/scripts.js"></script>
+    <script>
+        var closebtns = document.getElementsByClassName("close-grid");
+        var i;
+
+        for (i = 0; i < closebtns.length; i++) {
+            closebtns[i].addEventListener("click", function () {
+                this.parentElement.style.display = 'none';
+            });
+        }</script>
+    <script>
+        $(function () {
+            $('.sidebar-menu-collapsed').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });</script>
+    <script src="~/web2/starter/assets/js/modernizr.js"></script>
+    <script>
+        $(window).load(function () {
+            $(".se-pre-con").fadeOut("slow");;
+        });</script>
+    <script src="~/web2/starter/assets/js/bootstrap.min.js"></script>
 </body>
 </html>
