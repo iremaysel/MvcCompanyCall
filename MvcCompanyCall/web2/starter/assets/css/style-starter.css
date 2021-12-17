@@ -1197,10 +1197,11 @@ pre {
   padding: 0.3rem; }
 
 .table-bordered {
-  border: 1px solid #6c757d; }
-  .table-bordered th,
-  .table-bordered td {
-    border: 3px solid #6c757d; }
+  border: 1px solid #fff; }
+    .table-bordered th,
+    .table-bordered td {
+        border: 3px solid #fff;
+    }
   .table-bordered thead th,
   .table-bordered thead td {
     border-bottom-width: 2px; }
@@ -1217,6 +1218,9 @@ pre {
 .table-hover tbody tr:hover {
   color:  ActiveBorder;
   background-color: #fff; }
+tr:hover {
+    background-color: #fff;
+}
 
 .table-primary,
 .table-primary > th,
@@ -11750,8 +11754,9 @@ li.dropdown span.badge {
   margin-bottom: 0.6em; }
 
 .main-content {
-  margin-left: 250px;
-  background: #eee; }
+    margin-left: 250px;
+    background: #eff1f9;
+}
 
 @media (max-width: 640px) {
   .content-top-gap {
